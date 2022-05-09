@@ -1,4 +1,6 @@
 class Address < ApplicationRecord
+  has_many :shipments, foreign_key: :address_from_id
+
   validate_presence_of  :name,
                         :email,
                         :street1,

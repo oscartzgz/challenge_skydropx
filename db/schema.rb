@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_09_024012) do
+ActiveRecord::Schema.define(version: 2022_05_09_025548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,4 +44,16 @@ ActiveRecord::Schema.define(version: 2022_05_09_024012) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "shipments", force: :cascade do |t|
+    t.bigint "order_id", null: false
+    t.bigint "address_from_id", null: false
+    t.bigint "address_to_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["address_from_id"], name: "index_shipments_on_address_from_id"
+    t.index ["address_to_id"], name: "index_shipments_on_address_to_id"
+    t.index ["order_id"], name: "index_shipments_on_order_id"
+  end
+
+  add_foreign_key "shipments", "orders"
 end

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order: one
+  address_from: one
+  address_to: one
+
+two:
+  order: two
+  address_from: two
+  address_to: two
