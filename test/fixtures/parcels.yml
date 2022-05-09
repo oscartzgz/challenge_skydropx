@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lenght: 1
+  width: 1
+  height: 1
+  dimension_unit: MyString
+  weight: 1
+  weight_unit: MyString
+
+two:
+  lenght: 1
+  width: 1
+  height: 1
+  dimension_unit: MyString
+  weight: 1
+  weight_unit: MyString
