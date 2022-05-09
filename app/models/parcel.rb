@@ -1,4 +1,6 @@
 class Parcel < ApplicationRecord
+  belongs_to :shipment
+
   validate_presence_of  :lenght,
                         :width,
                         :height,
