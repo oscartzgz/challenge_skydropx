@@ -6,9 +6,14 @@ class DataImportsController < ApplicationController
   end
 
   def create
-    data_import = DataImport.create(data_import_params)
-
-    render json: data_import.id
+    data_import = DataImport.new(data_import_params)
+    
+    if data_import.save
+      ImportDataFromFileJob.perform_later(data_import)
+      render json: data_import.id
+    else
+      render json: { errors: data_import.errors }
+    end
   end
 
   private
