@@ -1,5 +1,5 @@
 class DataImport < ApplicationRecord
-  # after_initialize :set_defaults
+  after_initialize :set_defaults
 
   has_one_attached :file
 
@@ -9,6 +9,6 @@ class DataImport < ApplicationRecord
   private
   
   def set_defaults
-    self.pending!
+    self.status = :pending
   end
 end
